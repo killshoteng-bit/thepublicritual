@@ -51,6 +51,14 @@ export const metadata: Metadata = {
     url: "https://thepublicritual.com",
     siteName: "Public Ritual",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=3", sizes: "48x48" },
+      { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png?v=3", sizes: "180x180" }],
+    shortcut: "/favicon.ico?v=3",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Public Ritual",
