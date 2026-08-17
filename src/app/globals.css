@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f2f2f2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: #9c9c9c;
+  --color-dim: #6a6a6a;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bodoni), ui-serif, Georgia, serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+  --animate-rise: rise 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-spin-slow: spin 48s linear infinite;
+  --animate-pulse-star: pulse-star 2.8s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #000;
+  }
+
+  body {
+    background: #000;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: #e8e8e8;
+    color: #000;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-star {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chrome-text {
+  color: #ececec;
+  background-image: linear-gradient(
+    185deg,
+    #ffffff 0%,
+    #cfcfcf 16%,
+    #ffffff 32%,
+    #8d8d8d 50%,
+    #ececec 66%,
+    #9a9a9a 82%,
+    #f7f7f7 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .chrome-text {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+.brand-asset {
+  mix-blend-mode: screen;
+}
+
+.chrome-fill {
+  background-image: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    #d4d4d4 42%,
+    #9a9a9a 50%,
+    #e4e4e4 100%
+  );
+  color: #0a0a0a;
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.1);
+}
+
+.chrome-fill:hover {
+  opacity: 0.92;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-pulse-star {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
