@@ -3,6 +3,7 @@ export const site = {
   tagline: "The dance floor is a public ritual.",
   location: "Austin, Texas",
   origin: "Born in Austin. Made for everywhere.",
+  email: "publicritualmusic@gmail.com",
   description:
     "Independent electronic music label and cultural platform based in Austin, Texas — built around a simple belief: the dance floor is a public ritual.",
 };

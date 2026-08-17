@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/fade-in";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { PageIntro } from "@/components/page-intro";
 import { Sparkle } from "@/components/sparkle";
-import { artist } from "@/lib/data";
+import { artist, site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,6 +25,15 @@ export default function ContactPage() {
         <FadeIn>
           <p className="label mb-6">Channels</p>
           <ul className="space-y-8">
+            <li>
+              <p className="label mb-2">Inbox</p>
+              <a
+                href={`mailto:${site.email}`}
+                className="font-display text-2xl text-white hover:text-white/70"
+              >
+                {site.email}
+              </a>
+            </li>
             <li>
               <p className="label mb-2">Location</p>
               <p className="font-display text-2xl text-white">Austin, Texas</p>
