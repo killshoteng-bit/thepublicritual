@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/brand/hero.png", width: 1024, height: 1024 }],
+    url: "https://thepublicritual.com",
+    siteName: "Public Ritual",
   },
   twitter: {
     card: "summary_large_image",
     title: "Public Ritual",
     description: site.tagline,
-    images: ["/brand/hero.png"],
   },
 };
 
